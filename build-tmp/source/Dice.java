@@ -23,15 +23,17 @@ public void setup()
 }
 public void draw()
 {
-	background(0);
+	background(255);
 	dice = new Die(150,150);
 	dice.show();
+	dice.roll();
 		//your code here
 }
-public void mousePressed()
+public void mouseClicked()
 {
 	redraw();
 }
+
 class Die //models one single dice cube
 {
 	int myX,myY,rollr,answ;
@@ -42,40 +44,54 @@ class Die //models one single dice cube
 		//variable initializations here
 		myX = x;
 		myY = y;
-		rollr = (int)(Math.random()*6)+1;
-		answ = 0;
+		rollr = 6;
+		answ = 1;
 
 	}
 	public void roll()
 	{
 		//your code here
-		if (rollr == 1){
-			answ = 1;
-		}
-		if (rollr == 2){
-			answ = 2;
-		}
-		if (rollr == 3){
-			answ = 3;
-		}
-		if (rollr == 4){
-			answ = 4;
-		}
-		if (rollr == 5){
-			answ = 5;
-		}
-		if (rollr == 6){
-			answ =  6;
-		}
+		rollr = (int)(Math.random()*6)+1;
 								
 
 
 	}
 	public void show()
-	{
-		rect (40,40,40,40);
+	{	
+		fill(180,5,121);
+		rect (myX,myY,40,40);
 		fill(0);
-		ellipse(60, 60, 5, 5);
+		strokeWeight(5);
+
+		if (rollr==1) {
+			point(myX+20, myY+20);
+		} else if (rollr == 2) {
+			point (myX+10,myY+10);
+			point (myX+30,myY+30);
+		} else if (rollr == 3) {
+			point (myX+10,myY+10);
+			point (myX+20,myY+20);
+			point (myX+30,myY+30);
+		} else if (rollr == 4) {
+			point (myX+10,myY+10);
+			point (myX+30,myY+10);
+			point (myX+10,myY+30);
+			point (myX+30,myY+30);
+		} else if (rollr == 5){
+			point (myX+10,myY+10);
+			point (myX+30,myY+10);
+			point (myX+10,myY+30);
+			point (myX+30,myY+30);
+			point (myX+20,myY+20);
+		} else if (rollr == 6) {
+			point (myX+10,myY+10);
+			point (myX+30,myY+10);
+			point (myX+10,myY+20);
+			point (myX+30,myY+20);
+			point (myX+10,myY+30);
+			point (myX+30,myY+30);
+		}
+
 	}
 }
   static public void main(String[] passedArgs) {
