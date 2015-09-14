@@ -20,7 +20,7 @@ int sum,one,two,three,four,five,six,total;
 
 public void setup()
 {	
-	size(320,360);
+	size(320,320);
 	noLoop();
 }
 public void draw()

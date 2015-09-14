@@ -4,7 +4,7 @@ int sum,one,two,three,four,five,six,total;
 
 void setup()
 {	
-	size(320,360);
+	size(320,320);
 	noLoop();
 }
 void draw()
